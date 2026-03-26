@@ -100,7 +100,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('assets/images/tallboy-hero.jpg'); background-color: #1a1a1a;"></div>
+    <div class="hero-bg" style="background-image: url('assets/images/tallboy-sign-crowd.png'); background-color: #1a1a1a;"></div>
     <div class="hero-content">
       <h1>Home away from home</h1>
       <p>Cold beer, smoked wings, and a bar that doesn't try too hard. Shaw, DC.</p>
@@ -133,24 +133,24 @@
   <section class="section section-dark">
     <div class="container">
       <h2 class="section-title">What We're Known For</h2>
-      <p class="section-subtitle">Pop art murals, cold cans in the cooler, and a personality all its own. A neighborhood bar built by a bartender, for everyone.</p>
+      <p class="section-subtitle">Cold beer, smoked wings, and a neighborhood bar built by a bartender, for everyone.</p>
       <div class="features">
         <div class="feature-card">
-          <div class="feature-card-img" style="background-image: url('assets/images/wings.jpg'); background-color: var(--bg-accent);"></div>
+          <div class="feature-card-img" style="background-image: url('assets/images/tallboy-wings-tray.webp'); background-color: var(--bg-accent);"></div>
           <div class="feature-card-body">
             <h3>Smoked Wings</h3>
             <p>Slow smoked, perfectly crisped, tossed in your choice of sauce. Classic Buffalo, Memphis Dry Rub, Old Bay, Lemon Pepper, or General Tso. The reason people drive across the city.</p>
           </div>
         </div>
         <div class="feature-card">
-          <div class="feature-card-img" style="background-image: url('assets/images/beer.jpg'); background-color: var(--bg-accent);"></div>
+          <div class="feature-card-img" style="background-image: url('assets/images/tallboy-heady-topper.png'); background-color: var(--bg-accent);"></div>
           <div class="feature-card-body">
             <h3>RAMMY-Nominated Beer</h3>
             <p>Finalist for Beer Program of the Year, two years running. Taps rotate daily with fresh picks from breweries across the country. $3 off all beers during happy hour.</p>
           </div>
         </div>
         <div class="feature-card">
-          <div class="feature-card-img" style="background-image: url('assets/images/latenight.jpg'); background-color: var(--bg-accent);"></div>
+          <div class="feature-card-img" style="background-image: url('assets/images/tallboy-wings-beer.png'); background-color: var(--bg-accent);"></div>
           <div class="feature-card-body">
             <h3>Late Night Kitchen</h3>
             <p>When everywhere else in Shaw has closed, we're still serving food. Smash burgers, tacos, wings, grilled cheese. Kitchen stays open til close.</p>
@@ -162,9 +162,19 @@
 
   <!-- The Vibe -->
   <section class="section">
-    <div class="container text-center" style="max-width: 700px; margin: 0 auto;">
-      <h2 class="section-title">The Vibe</h2>
-      <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">Your home away from home. The place you go to get away from a busy day, sit at the bar, and actually have a conversation with your bartender. The walls are covered in murals and art celebrating Washington DC lore and folklore. There's a game on the TV if you want it. A playlist that somehow always hits if you don't. The energy shifts through the night: afternoon escape, evening event crowd, late night industry wind-down. Pull up a stool and stay a while.</p>
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title">The Vibe</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">Your home away from home. The place you go to get away from a busy day, sit at the bar, and actually have a conversation with your bartender. There's a game on the TV if you want it. Good music on if you don't. The energy is whatever you need it to be: afternoon wind down, evening hangs with your crew, late night food run when everywhere else has closed. Pull up a stool and stay a while.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px;">
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-packed-crowd.png" alt="Packed house at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-bartender.webp" alt="Bartender at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-patio.png" alt="Colorful patio at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-scratch-this.png" alt="Scratch This combo on the patio" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-event-night.png" alt="Event night at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-bar-busy.png" alt="Busy night at the bar" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      </div>
     </div>
   </section>
 
@@ -224,8 +234,8 @@
   <section class="section section-dark">
     <div class="container">
       <div class="email-signup">
-        <h3>A Note from TallBoy, Once a Week</h3>
-        <p>New taps, upcoming events, and whatever's happening in Shaw. Short, from the bar, never spammy.</p>
+        <h3>Get the Weekly Specials</h3>
+        <p>New taps, deals, upcoming events, and the inside track on what's happening at TallBoy this week. One email, no spam.</p>
         <form class="email-form" onsubmit="submitEmailSignup(event)">
           <input type="email" placeholder="your@email.com" required aria-label="Email address">
           <button type="submit" class="btn btn-gold">Sign Up</button>
