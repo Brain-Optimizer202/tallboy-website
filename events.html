@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — TallBoy | Shaw DC</title>
+  <meta name="description" content="Weekly events at TallBoy in Shaw, DC. Trivia, DJ nights, watch parties, drag bingo, and more. Plus upcoming convention center events nearby.">
+
+  <meta property="og:title" content="Events at TallBoy — Shaw DC">
+  <meta property="og:description" content="Something good every night. Trivia, DJ sets, watch parties, and more at Shaw's neighborhood bar.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html"><img src="assets/images/tallboy-logo.png" alt="TallBoy" class="nav-logo" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="private-events.html">Private Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://order.toasttab.com/online/tallboy" target="_blank" rel="noopener">Order Online</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Events</h1>
+      <p>Something good every night of the week.</p>
+    </div>
+  </div>
+
+  <!-- Weekly Calendar -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Daily Deals</h2>
+      <p class="section-subtitle">Something on every night. Here's the rotation.</p>
+      <div class="events-week">
+        <div class="event-day">
+          <div class="event-day-label">Mon</div>
+          <div class="event-item"><div class="event-item-name">$5 Off Boneless Wings</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Tue</div>
+          <div class="event-item"><div class="event-item-name">Bingo with Michael</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Wed</div>
+          <div class="event-item"><div class="event-item-name">Trivia</div><div class="event-item-time">$3 Off Bartender's Choice</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Thu</div>
+          <div class="event-item"><div class="event-item-name">$5 Off Bone In Wings</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Fri</div>
+          <div class="event-item"><div class="event-item-name">$20 Burger & A Beer</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Sat</div>
+          <div class="event-item"><div class="event-item-name">$8 Scratch This</div><div class="event-item-time">Beer Shot Combo</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Sun</div>
+          <div class="event-item"><div class="event-item-name">Bottomless Busch Lite</div><div class="event-item-time">12 to 4 PM</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Regular Lineup -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Our Regular Lineup</h2>
+      <p class="section-subtitle">The recurring nights that keep people coming back.</p>
+      <div id="events-list">
+        <!-- Static fallback -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Monday: $5 Off Boneless Wings</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">The Monday move. $5 off boneless wings all night. Start your week right.</p>
+          </div>
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Tuesday: Bingo with Michael</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Bingo night hosted by Michael. Prizes, drinks, and a room full of people who take their bingo way too seriously.</p>
+          </div>
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Wednesday: Trivia + $3 Off Bartender's Choice</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Bring your smartest friends. Or just bring yourself and join a team. $3 off the bartender's choice beer all night.</p>
+          </div>
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Thursday: $5 Off Bone In Wings</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Bone in wing special all night. Five sauces, one mission. The weekend starts here.</p>
+          </div>
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Friday: $20 Burger & A Beer</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Smash burger and a beer for $20. The Friday night deal. Open til 3 AM.</p>
+          </div>
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Saturday: $8 Scratch This Beer Shot Combo</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Beer and a shot for $8, scratch off style. Open til 3 AM.</p>
+          </div>
+          <div style="background: var(--bg-card); border-radius: 12px; padding: 24px;">
+            <h3 style="font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px;">Sunday: Bottomless Busch Lite</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Bottomless Busch Lite from 12 to 4. TVs on. Wings ready. Whatever game matters most to you that day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Convention Center CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="convention-banner">
+        <h3>Attending a Convention?</h3>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; margin-bottom: 24px;">We're around the corner from the Walter E. Washington Convention Center, with our own entrance on 9th Street. Group dinners, post-session drinks, late night hangs. No rental fee.</p>
+        <a href="convention.html" class="btn btn-gold">Plan Your Group Event</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Private Events CTA -->
+  <section class="section section-dark">
+    <div class="container text-center">
+      <h2 class="section-title">Want to Host Your Own?</h2>
+      <p class="section-subtitle">Birthdays, corporate events, watch parties, group drinks. No rental fee.</p>
+      <a href="private-events.html" class="btn btn-gold">Plan Your Event</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/tallboy-logo.png" alt="TallBoy" style="height: 40px;" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'">
+          <p>Shaw's neighborhood bar since 2019.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/tallboybar/" target="_blank" rel="noopener">IG</a>
+            <a href="https://www.facebook.com/tallboybar/" target="_blank" rel="noopener">FB</a>
+            <a href="https://www.tiktok.com/@tallboybar" target="_blank" rel="noopener">TT</a>
+          </div>
+        </div>
+        <div><h4>Hours</h4><ul class="footer-links"><li>Mon–Thu: 4pm–2am</li><li>Friday: 4pm–3am</li><li>Saturday: 12pm–3am</li><li>Sunday: 12pm–2am</li></ul></div>
+        <div><h4>Visit</h4><ul class="footer-links"><li><a href="https://maps.google.com/?q=1239+9th+St+NW+Washington+DC" target="_blank" rel="noopener">1239 9th St NW, Shaw DC</a></li><li><a href="tel:2024654822">(202) 465-4822</a></li><li><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></li></ul></div>
+        <div><h4>Quick Links</h4><ul class="footer-links"><li><a href="menu.html">Menu</a></li><li><a href="events.html">Events</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="https://order.toasttab.com/online/tallboy" target="_blank" rel="noopener">Order Online</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 TallBoy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

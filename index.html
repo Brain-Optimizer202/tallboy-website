@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TallBoy — Shaw's Neighborhood Bar | Washington DC</title>
+  <meta name="description" content="TallBoy is Shaw's neighborhood bar. RAMMY-nominated beer program, smoked wings, late night kitchen, and weekly events at 1239 9th St NW, Washington DC.">
+  <meta name="keywords" content="TallBoy, bar, Shaw, Washington DC, smoked wings, beer, late night food, events, convention center, neighborhood bar">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TallBoy — Shaw's Neighborhood Bar">
+  <meta property="og:description" content="Cold beer, smoked wings, and late night food in Shaw. RAMMY-nominated beer program. Kitchen open til close.">
+  <meta property="og:type" content="restaurant.bar">
+  <meta property="og:url" content="https://tallboybar.com">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "TallBoy",
+    "description": "Shaw's neighborhood bar since 2019. Built by bartenders, for everyone. RAMMY-nominated beer program, smoked wings, late night kitchen open til close, and daily deals every night of the week. Located around the corner from the Walter E. Washington Convention Center.",
+    "slogan": "Home away from home",
+    "image": "https://tallboybar.com/assets/images/tallboy-hero.jpg",
+    "url": "https://tallboybar.com",
+    "telephone": "(202) 465-4822",
+    "email": "Contact@TallBoyBar.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1239 9th St NW",
+      "addressLocality": "Washington",
+      "addressRegion": "DC",
+      "postalCode": "20001",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.9029,
+      "longitude": -77.0236
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "16:00", "closes": "02:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "03:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "03:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "02:00" }
+    ],
+    "servesCuisine": ["American", "Bar Food", "Wings", "Smoked Wings", "Tacos", "Smash Burgers"],
+    "priceRange": "$$",
+    "hasMenu": "https://tallboybar.com/menu.html",
+    "acceptsReservations": "True",
+    "award": ["RAMMY Finalist, Beer Program of the Year (2023)", "RAMMY Finalist, Beer Program of the Year (2024)"],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Late Night Kitchen", "value": true, "description": "Kitchen stays open til close. Weeknights til 1:30 AM, weekends til 2:30 AM." },
+      { "@type": "LocationFeatureSpecification", "name": "Outdoor Seating", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Private Events", "value": true, "description": "No rental fee. Birthdays, corporate outings, convention groups, watch parties." },
+      { "@type": "LocationFeatureSpecification", "name": "Convention Center Adjacent", "value": true, "description": "Around the corner from the Walter E. Washington Convention Center with own entrance on 9th Street." },
+      { "@type": "LocationFeatureSpecification", "name": "Daily Rotating Taps", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Live Events", "value": true, "description": "Trivia, bingo, DJ nights, watch parties, and daily deals every night." }
+    ],
+    "knowsAbout": ["craft beer", "smoked wings", "late night dining", "Shaw DC", "convention center dining", "neighborhood bar"],
+    "foundingDate": "2019",
+    "keywords": "neighborhood bar, Shaw DC, late night food, smoked wings, RAMMY nominated beer, convention center bar, outdoor seating, daily deals, trivia night, bingo night, happy hour Shaw DC, $3 off beers"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" aria-label="TallBoy Home">
+        <img src="assets/images/tallboy-logo.png" alt="TallBoy" class="nav-logo" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="private-events.html">Private Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://order.toasttab.com/online/tallboy" target="_blank" rel="noopener">Order Online</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Info Bar -->
+  <div class="info-bar" style="margin-top: var(--nav-height);">
+    Mon–Thu 4pm–2am &nbsp;·&nbsp; Fri 4pm–3am &nbsp;·&nbsp; Sat 12pm–3am &nbsp;·&nbsp; Sun 12pm–2am &nbsp;·&nbsp; 1239 9th St NW, Shaw DC &nbsp;·&nbsp; <a href="tel:2024654822">(202) 465-4822</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('assets/images/tallboy-hero.jpg'); background-color: #1a1a1a;"></div>
+    <div class="hero-content">
+      <h1>Home away from home</h1>
+      <p>Cold beer, smoked wings, and a bar that doesn't try too hard. Shaw, DC.</p>
+      <div class="hero-badges">
+        <span class="badge badge-gold">RAMMY Finalist — Beer Program of the Year</span>
+        <span class="badge">Kitchen Open Late</span>
+        <span class="badge">Around the Corner from the Convention Center</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="menu.html" class="btn btn-gold">See the Menu</a>
+        <a href="events.html" class="btn btn-outline">This Week's Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Happy Hour -->
+  <section class="section" style="background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, var(--blue-dark) 100%); padding: 36px 0;">
+    <div class="container text-center">
+      <h2 style="font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.2rem); text-transform: uppercase; margin-bottom: 6px;">Happy Hour</h2>
+      <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">4 PM to 6 PM · Monday through Friday</p>
+      <div style="display: flex; justify-content: center; gap: 36px; flex-wrap: wrap;">
+        <div><span style="font-family: var(--font-display); font-size: 1.8rem;">$3 Off</span><br><span style="font-size: 0.8rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.06em;">All Beers</span></div>
+        <div><span style="font-family: var(--font-display); font-size: 1.8rem;">$6</span><br><span style="font-size: 0.8rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.06em;">House Margarita</span></div>
+        <div><span style="font-family: var(--font-display); font-size: 1.8rem;">$6</span><br><span style="font-size: 0.8rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.06em;">Glasses of Wine</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Known For -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">What We're Known For</h2>
+      <p class="section-subtitle">Pop art murals, cold cans in the cooler, and a personality all its own. A neighborhood bar built by a bartender, for everyone.</p>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-card-img" style="background-image: url('assets/images/wings.jpg'); background-color: var(--bg-accent);"></div>
+          <div class="feature-card-body">
+            <h3>Smoked Wings</h3>
+            <p>Slow smoked, perfectly crisped, tossed in your choice of sauce. Classic Buffalo, Memphis Dry Rub, Old Bay, Lemon Pepper, or General Tso. The reason people drive across the city.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-img" style="background-image: url('assets/images/beer.jpg'); background-color: var(--bg-accent);"></div>
+          <div class="feature-card-body">
+            <h3>RAMMY-Nominated Beer</h3>
+            <p>Finalist for Beer Program of the Year, two years running. Taps rotate daily with fresh picks from breweries across the country. $3 off all beers during happy hour.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-img" style="background-image: url('assets/images/latenight.jpg'); background-color: var(--bg-accent);"></div>
+          <div class="feature-card-body">
+            <h3>Late Night Kitchen</h3>
+            <p>When everywhere else in Shaw has closed, we're still serving food. Smash burgers, tacos, wings, grilled cheese. Kitchen stays open til close.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Vibe -->
+  <section class="section">
+    <div class="container text-center" style="max-width: 700px; margin: 0 auto;">
+      <h2 class="section-title">The Vibe</h2>
+      <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">Your home away from home. The place you go to get away from a busy day, sit at the bar, and actually have a conversation with your bartender. The walls are covered in murals and art celebrating Washington DC lore and folklore. There's a game on the TV if you want it. A playlist that somehow always hits if you don't. The energy shifts through the night: afternoon escape, evening event crowd, late night industry wind-down. Pull up a stool and stay a while.</p>
+    </div>
+  </section>
+
+  <!-- Weekly Events Preview -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Daily Deals</h2>
+      <p class="section-subtitle">Something good every night.</p>
+      <div class="events-week">
+        <div class="event-day">
+          <div class="event-day-label">Mon</div>
+          <div class="event-item"><div class="event-item-name">$5 Off Boneless Wings</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Tue</div>
+          <div class="event-item"><div class="event-item-name">Bingo with Michael</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Wed</div>
+          <div class="event-item"><div class="event-item-name">Trivia</div><div class="event-item-time">$3 Off Bartender's Choice</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Thu</div>
+          <div class="event-item"><div class="event-item-name">$5 Off Bone In Wings</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Fri</div>
+          <div class="event-item"><div class="event-item-name">$20 Burger & A Beer</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Sat</div>
+          <div class="event-item"><div class="event-item-name">$8 Scratch This</div><div class="event-item-time">Beer Shot Combo</div></div>
+        </div>
+        <div class="event-day">
+          <div class="event-day-label">Sun</div>
+          <div class="event-item"><div class="event-item-name">Bottomless Busch Lite</div><div class="event-item-time">12 to 4 PM</div></div>
+        </div>
+      </div>
+      <div class="text-center mt-24">
+        <a href="events.html" class="btn btn-outline">Full Events Calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Convention Center CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="convention-banner">
+        <h3>At the Convention Center? We're Around the Corner.</h3>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; margin-bottom: 24px;">TallBoy is part of the Convention Center building with our own entrance on 9th Street. A one minute walk from the convention entrance. Group dinners, post-session drinks, exhibitor parties. No rental fee.</p>
+        <a href="convention.html" class="btn btn-gold">Plan Your Group Event</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Signup -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="email-signup">
+        <h3>A Note from TallBoy, Once a Week</h3>
+        <p>New taps, upcoming events, and whatever's happening in Shaw. Short, from the bar, never spammy.</p>
+        <form class="email-form" onsubmit="submitEmailSignup(event)">
+          <input type="email" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-gold">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Find Us</h2>
+      <p class="section-subtitle">1239 9th St NW, Shaw, Washington DC 20001</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.8!2d-77.0258!3d38.9029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7eac6a0e5d3%3A0x0!2s1239+9th+St+NW+Washington+DC!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="TallBoy location map">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/tallboy-logo.png" alt="TallBoy" style="height: 40px;" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'">
+          <p>Shaw's neighborhood bar since 2019. Built by a bartender, for everyone.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/tallboybar/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://www.facebook.com/tallboybar/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+            <a href="https://www.tiktok.com/@tallboybar" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <ul class="footer-links">
+            <li>Mon–Thu: 4pm–2am</li>
+            <li>Friday: 4pm–3am</li>
+            <li>Saturday: 12pm–3am</li>
+            <li>Sunday: 12pm–2am</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul class="footer-links">
+            <li><a href="https://maps.google.com/?q=1239+9th+St+NW+Washington+DC" target="_blank" rel="noopener">1239 9th St NW</a></li>
+            <li><a href="https://maps.google.com/?q=1239+9th+St+NW+Washington+DC" target="_blank" rel="noopener">Shaw, DC 20001</a></li>
+            <li><a href="tel:2024654822">(202) 465-4822</a></li>
+            <li><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="private-events.html">Private Events</a></li>
+            <li><a href="https://order.toasttab.com/online/tallboy" target="_blank" rel="noopener">Order Online</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 TallBoy. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

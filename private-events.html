@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Events — TallBoy | Shaw DC</title>
+  <meta name="description" content="Host your next event at TallBoy in Shaw, DC. Birthday parties, corporate events, group drinks, watch parties. No rental fee. Contact us to plan yours.">
+
+  <meta property="og:title" content="Private Events at TallBoy — Shaw DC">
+  <meta property="og:description" content="Birthday bashes, corporate retreats, group drinks. No rental fee. Shaw's neighborhood bar.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html"><img src="assets/images/tallboy-logo.png" alt="TallBoy" class="nav-logo" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="private-events.html">Private Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://order.toasttab.com/online/tallboy" target="_blank" rel="noopener">Order Online</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Private Events</h1>
+      <p>Your party. Our bar. No rental fee.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="form-grid">
+        <div class="form-info">
+          <h3>Your Event at TallBoy</h3>
+          <p>Whether it's a birthday bash, corporate retreat, business mixer, or a casual after-work hangout, TallBoy is the move. We don't charge a rental fee. Just bring your people, we'll handle the rest.</p>
+
+          <h3 style="margin-top: 32px;">What We Offer</h3>
+          <p>Full bar service with our RAMMY-nominated beer program. Late night kitchen for your crew. TVs for watch parties. A space that feels like home, not a conference room. Sara and Lea behind the bar, Joseph and Erlinda in the kitchen.</p>
+
+          <h3 style="margin-top: 32px;">Event Types</h3>
+          <p>Birthday parties, corporate outings, team outings, watch parties, rehearsal dinners, holiday parties, launch events, or just a Tuesday night takeover because you feel like it.</p>
+
+          <h3 style="margin-top: 32px;">Convention Center Groups</h3>
+          <p>Attending a conference at the Walter E. Washington Convention Center? We're around the corner with our own entrance on 9th Street. Group dinners, post-session drinks, exhibitor parties. A one minute walk and you're here.</p>
+
+          <div style="margin-top: 32px; padding: 20px; background: var(--bg-card); border-radius: 8px;">
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Questions? Reach out directly.</p>
+            <p style="margin-top: 8px;"><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></p>
+            <p><a href="tel:2024654822">(202) 465-4822</a></p>
+          </div>
+        </div>
+
+        <div>
+          <form onsubmit="submitEventForm(event)" style="background: var(--bg-card); padding: 32px; border-radius: 12px;">
+            <h3 style="font-family: var(--font-display); text-transform: uppercase; margin-bottom: 24px;">Plan Your Event</h3>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+            </div>
+            <div class="form-group">
+              <label for="event_type">Event Type</label>
+              <select id="event_type" name="event_type">
+                <option value="Birthday Party">Birthday Party</option>
+                <option value="Corporate Outing">Corporate Outing</option>
+                <option value="Team Outing">Team Outing</option>
+                <option value="Watch Party">Watch Party</option>
+                <option value="Convention Group Dinner">Convention Group Dinner</option>
+                <option value="Holiday Party">Holiday Party</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Event</label>
+              <textarea id="message" name="message" placeholder="Date, guest count, anything special you need..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/tallboy-logo.png" alt="TallBoy" style="height: 40px;" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'">
+          <p>Shaw's neighborhood bar since 2019.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/tallboybar/" target="_blank" rel="noopener">IG</a>
+            <a href="https://www.facebook.com/tallboybar/" target="_blank" rel="noopener">FB</a>
+            <a href="https://www.tiktok.com/@tallboybar" target="_blank" rel="noopener">TT</a>
+          </div>
+        </div>
+        <div><h4>Hours</h4><ul class="footer-links"><li>Mon–Thu: 4pm–2am</li><li>Friday: 4pm–3am</li><li>Saturday: 12pm–3am</li><li>Sunday: 12pm–2am</li></ul></div>
+        <div><h4>Visit</h4><ul class="footer-links"><li><a href="https://maps.google.com/?q=1239+9th+St+NW+Washington+DC" target="_blank" rel="noopener">1239 9th St NW, Shaw DC</a></li><li><a href="tel:2024654822">(202) 465-4822</a></li><li><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></li></ul></div>
+        <div><h4>Quick Links</h4><ul class="footer-links"><li><a href="menu.html">Menu</a></li><li><a href="events.html">Events</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="https://order.toasttab.com/online/tallboy" target="_blank" rel="noopener">Order Online</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 TallBoy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

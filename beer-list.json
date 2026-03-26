@@ -1,0 +1,315 @@
+{
+  "updated": "2026-03-25",
+  "beers": [
+    {
+      "name": "Busch Lite",
+      "origin": "Illinois",
+      "style": "Light Domestic",
+      "abv": "4.3%",
+      "story": "probably the first beer you had as a kid",
+      "size": "Draft",
+      "price": "7 | 22",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Forward Brewing Boat Day",
+      "origin": "Annapolis, MD",
+      "style": "Kolsch",
+      "abv": "4.8%",
+      "story": "lightly dry hopped ale",
+      "size": "Draft",
+      "price": "10",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Crooked Crab Furious George",
+      "origin": "Odenton, MD",
+      "style": "Hefeweizen",
+      "abv": "5.6%",
+      "story": "Packs a punch of fruity flavor",
+      "size": "Draft",
+      "price": "10",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Manor Hill Pils",
+      "origin": "Ellicott City, MD",
+      "style": "Pilsner",
+      "abv": "5.3%",
+      "story": "Crisp, light, and crushable",
+      "size": "Draft",
+      "price": "10",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Narragansett",
+      "origin": "Rhode Island",
+      "style": "American Lager",
+      "abv": "5%",
+      "story": "Nar-uh-GAN-sit. Or just say GANSIT",
+      "size": "Tallboy",
+      "price": "7",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Budweiser",
+      "origin": "St. Louis, MO",
+      "style": "Lager",
+      "abv": "5%",
+      "story": "This bud's for you",
+      "size": "Tallboy",
+      "price": "7",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Coors Light",
+      "origin": "Golden, CO",
+      "style": "Light Domestic",
+      "abv": "4.25%",
+      "story": "Colorado kool-aid",
+      "size": "12 oz bottle",
+      "price": "7",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Japas San",
+      "origin": "Louisville, KY",
+      "style": "Fruited Blonde",
+      "abv": "5%",
+      "story": "Brewed with guava and jasmine",
+      "size": "Tallboy",
+      "price": "10",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Corona",
+      "origin": "Mexico",
+      "style": "Mexican Lager",
+      "abv": "4%",
+      "story": "Lime, salt, repeat",
+      "size": "12oz Bottle",
+      "price": "8",
+      "category": "LIGHT + BRIGHT"
+    },
+    {
+      "name": "Right Proper Raised by Wolves",
+      "origin": "Washington, D.C.",
+      "style": "American IPA",
+      "abv": "5%",
+      "story": "You know who else was raised by Wolves? The founders of Rome!",
+      "size": "Draft",
+      "price": "10",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Fat Orange Cat Baby Kittens",
+      "origin": "New Haven, CT",
+      "style": "East Coast IPA",
+      "abv": "6.5%",
+      "story": "Bob likes it!",
+      "size": "Draft",
+      "price": "10",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Hop Butcher for the World Grid",
+      "origin": "Chicago, IL",
+      "style": "Pale Ale",
+      "abv": "5.7%",
+      "story": "Super soft and just a touch of hoppiness",
+      "size": "Draft",
+      "price": "11",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Nepenthe Lord Bones",
+      "origin": "Baltimore, MD",
+      "style": "Milkshake IPA",
+      "abv": "7.1%",
+      "story": "Made with Madagascar bourbon vanilla beans",
+      "size": "Tallboy",
+      "price": "11",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Crooked Crab Pink Crabby Club",
+      "origin": "Odenton, MD",
+      "style": "New England IPA",
+      "abv": "6.3%",
+      "story": "Pink Boots Blend hops so we can keep on dancing",
+      "size": "Tallboy",
+      "price": "11",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Bell's Two Hearted",
+      "origin": "Comstock, MI",
+      "style": "American IPA",
+      "abv": "7%",
+      "story": "You know what it is",
+      "size": "Tallboy",
+      "price": "11",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Finback Rolling in Clouds",
+      "origin": "Queens, NY",
+      "style": "Hazy IPA",
+      "abv": "7.1%",
+      "story": "Fuzzy and fruity",
+      "size": "Tallboy",
+      "price": "12",
+      "category": "HOPPY"
+    },
+    {
+      "name": "The Alchemist Heady Topper",
+      "origin": "Stowe, VT",
+      "style": "Imperial IPA",
+      "abv": "8%",
+      "story": "All the way from Vermont! Wave after wave of hoppy flavors!",
+      "size": "Tallboy",
+      "price": "12",
+      "category": "HOPPY"
+    },
+    {
+      "name": "Tallboy Amber",
+      "origin": "House",
+      "style": "Amber",
+      "abv": "5.2%",
+      "story": "Classic Amber ale, malty and mellow",
+      "size": "Draft",
+      "price": "10",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Guinness",
+      "origin": "Dublin",
+      "style": "Irish Stout",
+      "abv": "4.2%",
+      "story": "Split the G baby",
+      "size": "Tallboy",
+      "price": "9",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Divine Barrel Tried and True",
+      "origin": "Charlotte, NC",
+      "style": "Brown Ale",
+      "abv": "6%",
+      "story": "Collab with Ronald McDonald charities",
+      "size": "Tallboy",
+      "price": "10",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Singlecut Eric More Cowbell",
+      "origin": "Clifton Park, NY",
+      "style": "Chocolate Milk Stout",
+      "abv": "6%",
+      "story": "I've got a fever!",
+      "size": "Tallboy",
+      "price": "11",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Fat Orange Cat All Cats are Grey",
+      "origin": "New Haven, CT",
+      "style": "White Stout",
+      "abv": "7.2%",
+      "story": "light colored stout with notes of chocolate, caramel, and orange",
+      "size": "Tallboy",
+      "price": "12",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Vasen Immolator",
+      "origin": "Richmond, VA",
+      "style": "Doppelbock",
+      "abv": "7.8%",
+      "story": "German style dark lager brewed with smoked malt",
+      "size": "Tallboy",
+      "price": "12",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Bluejacket 895",
+      "origin": "Washington, DC",
+      "style": "Imperial Red Ale",
+      "abv": "8%",
+      "story": "In honor of a new record",
+      "size": "Tallboy",
+      "price": "11",
+      "category": "TOASTY"
+    },
+    {
+      "name": "Downeast Rotating",
+      "origin": "Boston, MA",
+      "style": "Sweet Cider",
+      "abv": "5%",
+      "story": "We love these ciders, ask whats on now",
+      "size": "Draft",
+      "price": "10/40",
+      "category": "FRUITY"
+    },
+    {
+      "name": "Commonwealth Menage A Trois",
+      "origin": "Virginia Beach, VA",
+      "style": "Tart Ale",
+      "abv": "5%",
+      "story": "Jammy and delicious",
+      "size": "Draft",
+      "price": "10",
+      "category": "FRUITY"
+    },
+    {
+      "name": "Shandy Baby",
+      "origin": "Illinois",
+      "style": "Radler",
+      "abv": "3.5%",
+      "story": "Nice and light to keep it tight. Choose from orange, pineapple, lemon",
+      "size": "Draft",
+      "price": "8",
+      "category": "FRUITY"
+    },
+    {
+      "name": "Vasen The Otter",
+      "origin": "Richmond, VA",
+      "style": "Gose",
+      "abv": "5.3%",
+      "story": "Cherry pomegranate!",
+      "size": "Tallboy",
+      "price": "11",
+      "category": "FRUITY"
+    },
+    {
+      "name": "Untitled Art Florida Seltzer",
+      "origin": "Waunakee, WI",
+      "style": "Seltzer",
+      "abv": "5%",
+      "story": "Made with fruit puree, the best seltzers",
+      "size": "Slim Girl",
+      "price": "9",
+      "category": "FRUITY"
+    },
+    {
+      "name": "Nutrl",
+      "origin": "Saint Louis, MO",
+      "style": "Seltzer",
+      "abv": "4.6%",
+      "story": "She's not high noon, but I promise she's just as good",
+      "size": "Slim Girl",
+      "price": "6",
+      "category": "FRUITY"
+    },
+    {
+      "name": "Artifact Pineapple Queen",
+      "origin": "Vergennes, VT",
+      "style": "Cider",
+      "abv": "6.6%",
+      "story": "More on the dry and acidic side",
+      "size": "Tallboy",
+      "price": "10",
+      "category": "FRUITY"
+    }
+  ]
+}
