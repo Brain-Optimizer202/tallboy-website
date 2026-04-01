@@ -29,7 +29,7 @@ document.addEventListener('click', function(e) {
 
   var overlay = document.createElement('div');
   overlay.id = 'mobile-nav-overlay';
-  overlay.style.cssText = 'display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:#f5f0e8;flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:9999;';
+  overlay.style.cssText = 'display:none;position:fixed;top:70px;right:16px;left:16px;background:#f5f0e8;flex-direction:column;align-items:center;padding:32px 20px;gap:24px;z-index:9999;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.3);';
 
   // Clone nav links into the overlay
   var links = navLinks.querySelectorAll('a');
