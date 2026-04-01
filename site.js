@@ -489,6 +489,38 @@ function initTonightHighlight() {
   }
 }
 
+/* ── Side Peek Mascot (scroll-driven, subpages) ────────── */
+
+function initSidePeek() {
+  var peeks = document.querySelectorAll('.mascot-side-peek');
+  if (!peeks.length) return;
+
+  peeks.forEach(function(peek) {
+    var sectionIdx = parseInt(peek.getAttribute('data-peek-section')) || 2;
+    var sections = document.querySelectorAll('section');
+    var target = sections[sectionIdx - 1];
+    if (!target) target = sections[0];
+
+    if (!target) return;
+
+    function checkScroll() {
+      var rect = target.getBoundingClientRect();
+      var windowH = window.innerHeight;
+      // Show when the target section is in the middle portion of viewport
+      var inView = rect.top < windowH * 0.6 && rect.bottom > windowH * 0.3;
+
+      if (inView) {
+        peek.classList.add('visible');
+      } else {
+        peek.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  });
+}
+
 /* ── Init on DOM ready ──────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -502,4 +534,5 @@ document.addEventListener('DOMContentLoaded', function() {
   initLightbox();
   initOpenNow();
   initTonightHighlight();
+  initSidePeek();
 });

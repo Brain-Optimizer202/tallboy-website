@@ -140,9 +140,7 @@ img { max-width: 100%; height: auto; display: block; }
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(245, 240, 232, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #f5f0e8;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1445,33 +1443,67 @@ img { max-width: 100%; height: auto; display: block; }
   50% { transform: translateY(-6px); }
 }
 
-/* ── Page Peek Mascot (subpages) ──────────────────────── */
+/* ── Side Peek Mascot (subpages, scroll-driven) ──────── */
 
-.mascot-page-peek {
-  position: absolute;
-  bottom: -30px;
-  right: 5%;
-  height: 110px;
-  z-index: 10;
-  animation: mascotPagePeek 0.8s ease-out 0.6s both;
+.mascot-side-peek {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: pointer;
 }
 
-.mascot-page-peek img {
-  height: 100%;
-  width: auto;
-  display: block;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+.mascot-side-peek.from-left {
+  left: 0;
+  top: 45%;
+  transform: translateX(-100%);
 }
 
-.mascot-page-peek:hover img {
+.mascot-side-peek.from-right {
+  right: 0;
+  top: 45%;
+  transform: translateX(100%);
+}
+
+.mascot-side-peek.visible.from-left {
+  transform: translateX(-20%);
+  pointer-events: auto;
+}
+
+.mascot-side-peek.visible.from-right {
+  transform: translateX(20%);
+  pointer-events: auto;
+}
+
+.mascot-side-peek img {
+  height: 120px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35));
+}
+
+.mascot-side-peek.from-left img {
+  transform: rotate(90deg);
+}
+
+.mascot-side-peek.from-right img {
+  transform: rotate(-90deg);
+}
+
+.mascot-side-peek:hover img {
   animation: mascotBounce 0.5s ease;
 }
 
-@keyframes mascotPagePeek {
-  0% { transform: translateY(40px) rotate(10deg); opacity: 0; }
-  70% { transform: translateY(-5px) rotate(-2deg); opacity: 1; }
-  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+@media (max-width: 768px) {
+  .mascot-side-peek img {
+    height: 80px;
+  }
+  .mascot-side-peek.visible.from-left {
+    transform: translateX(-25%);
+  }
+  .mascot-side-peek.visible.from-right {
+    transform: translateX(25%);
+  }
 }
 
 /* ── Reduced Motion Respect ────────────────────────────── */
@@ -1487,7 +1519,7 @@ img { max-width: 100%; height: auto; display: block; }
   .mascot.spinning img { animation: none; }
   .mascot.waving img { animation: none; }
   .mascot-footer { animation: none; }
-  .mascot-page-peek { animation: none; opacity: 1; transform: none; }
+  .mascot-side-peek { transition: none; }
   .btn:hover { transform: none; }
   .feature-card:hover { transform: none; }
   .vibe-photo:hover img { transform: none; }
