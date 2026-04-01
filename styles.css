@@ -644,6 +644,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 768px) {
   .form-grid { grid-template-columns: 1fr; }
+  .form-grid > .form-info { order: 2; }
+  .form-grid > :not(.form-info) { order: 1; }
 }
 
 .form-info h3 {
