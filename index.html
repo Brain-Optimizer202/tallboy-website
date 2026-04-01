@@ -98,6 +98,12 @@
     Mon–Thu 4pm–2am &nbsp;·&nbsp; Fri 4pm–3am &nbsp;·&nbsp; Sat 12pm–3am &nbsp;·&nbsp; Sun 12pm–2am &nbsp;·&nbsp; 1239 9th St NW, Shaw DC &nbsp;·&nbsp; <a href="tel:2024654822">(202) 465-4822</a>
   </div>
 
+  <!-- Open Now Badge -->
+  <div id="open-now-badge" class="open-now-badge" style="display:none;">
+    <span class="open-now-dot"></span>
+    <span id="open-now-text">Open Now</span>
+  </div>
+
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg" style="background-image: url('assets/images/tallboy-sign-crowd.png'); background-color: #1a1a1a;"></div>
@@ -114,6 +120,10 @@
         <a href="events.html" class="btn btn-outline">This Week's Events</a>
       </div>
     </div>
+    <!-- Mascot peek from right -->
+    <div class="mascot mascot-hero" id="mascot-hero">
+      <img src="assets/images/tallboy-mascot.png" alt="TallBoy mascot" loading="lazy">
+    </div>
   </section>
 
   <!-- Happy Hour -->
@@ -129,12 +139,17 @@
     </div>
   </section>
 
+  <!-- Mascot walk divider -->
+  <div class="mascot-divider" data-mascot-walk>
+    <div class="mascot"><img src="assets/images/tallboy-mascot.png" alt="" loading="lazy"></div>
+  </div>
+
   <!-- What We're Known For -->
   <section class="section section-dark">
     <div class="container">
-      <h2 class="section-title">What We're Known For</h2>
-      <p class="section-subtitle">Cold beer, smoked wings, and a neighborhood bar built by a bartender, for everyone.</p>
-      <div class="features">
+      <h2 class="section-title reveal">What We're Known For</h2>
+      <p class="section-subtitle reveal">Cold beer, smoked wings, and a neighborhood bar built by a bartender, for everyone.</p>
+      <div class="features reveal-stagger">
         <div class="feature-card">
           <div class="feature-card-img" style="background-image: url('assets/images/tallboy-wings-tray.webp'); background-color: var(--bg-accent);"></div>
           <div class="feature-card-body">
@@ -164,16 +179,16 @@
   <section class="section">
     <div class="container">
       <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <h2 class="section-title">The Vibe</h2>
-        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">Your home away from home. The place you go to get away from a busy day, sit at the bar, and actually have a conversation with your bartender. There's a game on the TV if you want it. Good music on if you don't. The energy is whatever you need it to be: afternoon wind down, evening hangs with your crew, late night food run when everywhere else has closed. Pull up a stool and stay a while.</p>
+        <h2 class="section-title reveal">The Vibe</h2>
+        <p class="reveal" style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">Your home away from home. The place you go to get away from a busy day, sit at the bar, and actually have a conversation with your bartender. There's a game on the TV if you want it. Good music on if you don't. The energy is whatever you need it to be: afternoon wind down, evening hangs with your crew, late night food run when everywhere else has closed. Pull up a stool and stay a while.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px;">
-        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-packed-crowd.png" alt="Packed house at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-bartender.webp" alt="Bartender at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-patio.png" alt="Colorful patio at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-scratch-this.png" alt="Scratch This combo on the patio" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-event-night.png" alt="Event night at TallBoy" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;"><img src="assets/images/tallboy-bar-busy.png" alt="Busy night at the bar" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div class="reveal-stagger" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px;">
+        <div class="vibe-photo" data-lightbox><img src="assets/images/tallboy-packed-crowd.png" alt="Packed house at TallBoy" loading="lazy"></div>
+        <div class="vibe-photo" data-lightbox><img src="assets/images/tallboy-bartender.webp" alt="Bartender at TallBoy" loading="lazy"></div>
+        <div class="vibe-photo" data-lightbox><img src="assets/images/tallboy-patio.png" alt="Colorful patio at TallBoy" loading="lazy"></div>
+        <div class="vibe-photo" data-lightbox><img src="assets/images/tallboy-scratch-this.png" alt="Scratch This combo on the patio" loading="lazy"></div>
+        <div class="vibe-photo" data-lightbox><img src="assets/images/tallboy-event-night.png" alt="Event night at TallBoy" loading="lazy"></div>
+        <div class="vibe-photo" data-lightbox><img src="assets/images/tallboy-bar-busy.png" alt="Busy night at the bar" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -181,9 +196,9 @@
   <!-- Weekly Events Preview -->
   <section class="section section-dark">
     <div class="container">
-      <h2 class="section-title">Daily Deals</h2>
-      <p class="section-subtitle">Something good every night.</p>
-      <div class="events-week">
+      <h2 class="section-title reveal">Daily Deals</h2>
+      <p class="section-subtitle reveal">Something good every night.</p>
+      <div class="events-week reveal-stagger" id="events-week-home">
         <div class="event-day">
           <div class="event-day-label">Mon</div>
           <div class="event-item"><div class="event-item-name">$5 Off Boneless Wings</div></div>
@@ -222,7 +237,7 @@
   <!-- Convention Center CTA -->
   <section class="section">
     <div class="container">
-      <div class="convention-banner">
+      <div class="convention-banner reveal">
         <h3>At the Convention Center? We're Around the Corner.</h3>
         <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; margin-bottom: 24px;">TallBoy is part of the Convention Center building with our own entrance on 9th Street. A one minute walk from the convention entrance. Group dinners, post-session drinks, exhibitor parties. No rental fee.</p>
         <a href="convention.html" class="btn btn-gold">Plan Your Group Event</a>
@@ -233,7 +248,8 @@
   <!-- Email Signup -->
   <section class="section section-dark">
     <div class="container">
-      <div class="email-signup">
+      <div class="email-signup reveal">
+        <img src="assets/images/tallboy-mascot.png" alt="" class="mascot-email" loading="lazy">
         <h3>Get the Weekly Specials</h3>
         <p>New taps, deals, upcoming events, and the inside track on what's happening at TallBoy this week. One email, no spam.</p>
         <form class="email-form" onsubmit="submitEmailSignup(event)">
@@ -247,7 +263,7 @@
   <!-- Map -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Find Us</h2>
+      <h2 class="section-title reveal">Find Us</h2>
       <p class="section-subtitle">1239 9th St NW, Shaw, Washington DC 20001</p>
       <div class="map-container">
         <iframe
@@ -264,14 +280,24 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
+      <!-- Mascot chilling in footer -->
+      <div class="mascot" style="text-align: center;" id="mascot-footer">
+        <img src="assets/images/tallboy-mascot.png" alt="TallBoy mascot" class="mascot-footer" loading="lazy">
+      </div>
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="assets/images/tallboy-logo.png" alt="TallBoy" style="height: 40px;" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'">
           <p>Shaw's neighborhood bar since 2019. Built by a bartender, for everyone.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/tallboybar/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-            <a href="https://www.facebook.com/tallboybar/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-            <a href="https://www.tiktok.com/@tallboybar" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+            <a href="https://www.instagram.com/tallboybar/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/tallboybar/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@tallboybar" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
           </div>
         </div>
         <div>
@@ -307,6 +333,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Full size photo" id="lightbox-img">
+  </div>
 
   <script src="site.js"></script>
 </body>

@@ -288,18 +288,206 @@ function formatDate(dateStr) {
   } catch (e) { return dateStr; }
 }
 
-/* ── Scroll-triggered nav background ────────────────────── */
+/* ═══════════════════════════════════════════════════════════
+   ROUND 2 — Scroll, Lightbox, Mascot, Open/Close, Nav
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Nav: Shrink + border on scroll ────────────────────── */
 
 window.addEventListener('scroll', function() {
   var nav = document.querySelector('.nav');
-  if (nav) {
-    if (window.scrollY > 50) {
-      nav.style.borderBottomColor = 'var(--border)';
-    } else {
-      nav.style.borderBottomColor = 'transparent';
-    }
+  if (!nav) return;
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
   }
 });
+
+/* ── Scroll Reveal Observer ────────────────────────────── */
+
+function initScrollReveals() {
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just show everything
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger').forEach(function(el) {
+      el.classList.add('visible');
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger').forEach(function(el) {
+    observer.observe(el);
+  });
+}
+
+/* ── Mascot Walk Divider Observer ──────────────────────── */
+
+function initMascotWalks() {
+  var dividers = document.querySelectorAll('[data-mascot-walk]');
+  if (!dividers.length || !('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var mascot = entry.target.querySelector('.mascot');
+        if (mascot && !mascot.classList.contains('walking')) {
+          mascot.classList.add('walking');
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  dividers.forEach(function(d) { observer.observe(d); });
+}
+
+/* ── Mascot Click Easter Egg ───────────────────────────── */
+
+function initMascotClicks() {
+  document.querySelectorAll('.mascot').forEach(function(m) {
+    m.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var img = m.querySelector('img');
+      if (!img) return;
+      m.classList.remove('spinning');
+      // Force reflow to restart animation
+      void m.offsetWidth;
+      m.classList.add('spinning');
+      setTimeout(function() { m.classList.remove('spinning'); }, 700);
+    });
+  });
+}
+
+/* ── Mascot Hero Wave after idle ───────────────────────── */
+
+function initMascotWave() {
+  var hero = document.getElementById('mascot-hero');
+  if (!hero) return;
+  setInterval(function() {
+    hero.classList.remove('waving');
+    void hero.offsetWidth;
+    hero.classList.add('waving');
+    setTimeout(function() { hero.classList.remove('waving'); }, 1300);
+  }, 8000);
+}
+
+/* ── Lightbox ──────────────────────────────────────────── */
+
+function initLightbox() {
+  var overlay = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  if (!overlay || !lbImg) return;
+
+  document.querySelectorAll('[data-lightbox]').forEach(function(photo) {
+    photo.addEventListener('click', function() {
+      var img = photo.querySelector('img');
+      if (!img) return;
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+/* ── Open Now / Closed Badge ───────────────────────────── */
+
+function initOpenNow() {
+  var badge = document.getElementById('open-now-badge');
+  var text = document.getElementById('open-now-text');
+  if (!badge || !text) return;
+
+  function checkOpen() {
+    // TallBoy hours in ET
+    var now = new Date();
+    var et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    var day = et.getDay(); // 0=Sun
+    var hour = et.getHours();
+    var min = et.getMinutes();
+    var t = hour + min / 60;
+
+    var isOpen = false;
+    var closeText = '';
+
+    if (day >= 1 && day <= 4) {
+      // Mon-Thu: 4pm-2am (next day)
+      isOpen = t >= 16 || t < 2;
+      closeText = 'til 2am';
+    } else if (day === 5) {
+      // Fri: 4pm-3am
+      isOpen = t >= 16 || t < 3;
+      closeText = 'til 3am';
+    } else if (day === 6) {
+      // Sat: 12pm-3am
+      isOpen = t >= 12 || t < 3;
+      closeText = 'til 3am';
+    } else {
+      // Sun: 12pm-2am (Mon)
+      isOpen = t >= 12 || t < 2;
+      closeText = 'til 2am';
+    }
+
+    badge.style.display = 'inline-flex';
+    if (isOpen) {
+      badge.classList.remove('closed');
+      text.textContent = 'Open Now ' + closeText;
+    } else {
+      badge.classList.add('closed');
+      // Figure out when we open next
+      if (day === 0 || day === 6) {
+        text.textContent = 'Opens at 12pm';
+      } else {
+        text.textContent = 'Opens at 4pm';
+      }
+    }
+  }
+
+  checkOpen();
+  setInterval(checkOpen, 60000);
+}
+
+/* ── Tonight Highlight on Events Grid ──────────────────── */
+
+function initTonightHighlight() {
+  var grid = document.getElementById('events-week-home');
+  if (!grid) return;
+
+  var now = new Date();
+  var et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  var day = et.getDay(); // 0=Sun, 1=Mon...
+
+  // Map JS day (0=Sun) to our event-day order (Mon=0, Tue=1... Sun=6)
+  var dayMap = [6, 0, 1, 2, 3, 4, 5]; // JS Sun=0 -> our index 6
+  var todayIdx = dayMap[day];
+
+  var days = grid.querySelectorAll('.event-day');
+  if (days[todayIdx]) {
+    days[todayIdx].classList.add('tonight');
+  }
+}
 
 /* ── Init on DOM ready ──────────────────────────────────── */
 
@@ -307,4 +495,11 @@ document.addEventListener('DOMContentLoaded', function() {
   loadEventsCalendar();
   loadConventions();
   loadEventsList();
+  initScrollReveals();
+  initMascotWalks();
+  initMascotClicks();
+  initMascotWave();
+  initLightbox();
+  initOpenNow();
+  initTonightHighlight();
 });

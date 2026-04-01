@@ -911,3 +911,501 @@ img { max-width: 100%; height: auto; display: block; }
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ROUND 2 UPGRADES — Animations, Mascot, Polish
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Scroll Reveal Animations ──────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger children inside a reveal group */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+/* ── Hero Ken Burns + Staggered Entry ──────────────────── */
+
+.hero-bg {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.hero-content h1 {
+  animation: heroSlideUp 0.8s ease-out 0.2s both;
+}
+
+.hero-content > p {
+  animation: heroSlideUp 0.8s ease-out 0.4s both;
+}
+
+.hero-badges {
+  animation: heroSlideUp 0.8s ease-out 0.6s both;
+}
+
+.hero-ctas {
+  animation: heroSlideUp 0.8s ease-out 0.8s both;
+}
+
+@keyframes heroSlideUp {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Nav Shrink on Scroll ──────────────────────────────── */
+
+.nav {
+  transition: height 0.3s ease, background 0.3s ease;
+}
+
+.nav.scrolled {
+  height: 56px;
+  background: rgba(13, 13, 13, 0.98);
+}
+
+.nav.scrolled .nav-logo {
+  height: 36px;
+  transition: height 0.3s ease;
+}
+
+/* ── Open Now Badge ────────────────────────────────────── */
+
+.open-now-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(39, 174, 96, 0.15);
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: absolute;
+  top: calc(var(--nav-height) + 16px);
+  right: 24px;
+  z-index: 10;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+.open-now-badge.closed {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--red);
+  color: var(--red);
+  animation: none;
+}
+
+.open-now-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(39, 174, 96, 0); }
+}
+
+/* ── Button Upgrades ───────────────────────────────────── */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ── Feature Card Upgrades ─────────────────────────────── */
+
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--border);
+}
+
+.feature-card-img {
+  transition: transform 0.4s ease;
+  overflow: hidden;
+}
+
+.feature-card:hover .feature-card-img {
+  transform: scale(1.05);
+}
+
+/* ── Photo Grid Upgrades ──────────────────────────────── */
+
+.vibe-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+  cursor: pointer;
+}
+
+.vibe-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.vibe-photo:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.vibe-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vibe-photo:hover::after {
+  opacity: 1;
+}
+
+/* ── Events: Tonight Highlight ─────────────────────────── */
+
+.event-day.tonight {
+  border: 1px solid var(--red);
+  box-shadow: 0 0 20px rgba(212, 58, 47, 0.2);
+  position: relative;
+}
+
+.event-day.tonight::before {
+  content: 'TONIGHT';
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--red);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 10px;
+  border-radius: 3px;
+}
+
+/* ── Lightbox ──────────────────────────────────────────── */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.lightbox-overlay.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════════
+   MASCOT — TallBoy Beer Can Character
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Mascot Base ───────────────────────────────────────── */
+
+.mascot {
+  position: relative;
+  display: inline-block;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 50;
+}
+
+.mascot img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* ── Hero Mascot: Peek from right side ─────────────────── */
+
+.mascot-hero {
+  position: absolute;
+  bottom: 40px;
+  right: -20px;
+  height: 140px;
+  animation: mascotPeek 1s ease-out 1.2s both;
+  z-index: 10;
+}
+
+@keyframes mascotPeek {
+  0% { transform: translateX(100px) rotate(15deg); opacity: 0; }
+  60% { transform: translateX(-10px) rotate(-3deg); opacity: 1; }
+  80% { transform: translateX(5px) rotate(2deg); }
+  100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+}
+
+/* ── Section Divider Mascot: Walk across ───────────────── */
+
+.mascot-divider {
+  width: 100%;
+  overflow: hidden;
+  height: 80px;
+  position: relative;
+  pointer-events: none;
+}
+
+.mascot-divider .mascot {
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  height: 70px;
+  pointer-events: auto;
+}
+
+.mascot-divider .mascot.walking {
+  animation: mascotWalk 4s ease-in-out forwards;
+}
+
+@keyframes mascotWalk {
+  0% { left: -100px; transform: scaleX(1); }
+  45% { left: calc(50% - 35px); transform: scaleX(1); }
+  50% { left: calc(50% - 35px); transform: scaleX(1); }
+  55% { left: calc(50% - 35px); transform: scaleX(1); }
+  100% { left: calc(100% + 100px); transform: scaleX(1); }
+}
+
+/* ── Mascot Bounce (on hover/click anywhere) ───────────── */
+
+.mascot:hover img {
+  animation: mascotBounce 0.5s ease;
+}
+
+@keyframes mascotBounce {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25% { transform: translateY(-12px) rotate(-5deg); }
+  50% { transform: translateY(0) rotate(3deg); }
+  75% { transform: translateY(-6px) rotate(-2deg); }
+}
+
+/* ── Mascot Spin (click easter egg) ────────────────────── */
+
+.mascot.spinning img {
+  animation: mascotSpin 0.6s ease-in-out;
+}
+
+@keyframes mascotSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(360deg) scale(1.15); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+
+/* ── Mascot Wave (idle after 5s) ───────────────────────── */
+
+.mascot.waving img {
+  animation: mascotWave 1.2s ease-in-out;
+}
+
+@keyframes mascotWave {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(12deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(10deg); }
+  60% { transform: rotate(-5deg); }
+  75% { transform: rotate(6deg); }
+}
+
+/* ── Mascot at Email Signup ────────────────────────────── */
+
+.email-signup {
+  position: relative;
+  overflow: visible;
+}
+
+.mascot-email {
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  height: 90px;
+  transform: rotate(12deg);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.email-signup:hover .mascot-email,
+.email-signup:focus-within .mascot-email {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* ── Mascot in Events: Peeking behind today ────────────── */
+
+.mascot-events {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 55px;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.event-day.tonight:hover .mascot-events {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* ── Footer Mascot: Chilling ───────────────────────────── */
+
+.mascot-footer {
+  height: 80px;
+  margin: 0 auto 16px;
+  display: block;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  animation: mascotFloat 3s ease-in-out infinite;
+}
+
+.mascot-footer:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes mascotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ── Reduced Motion Respect ────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right { transition: none; opacity: 1; transform: none; }
+  .reveal-stagger > * { transition: none; opacity: 1; transform: none; }
+  .hero-bg { animation: none; }
+  .hero-content h1, .hero-content > p, .hero-badges, .hero-ctas { animation: none; }
+  .mascot-hero { animation: none; opacity: 1; transform: none; }
+  .mascot-divider .mascot.walking { animation: none; }
+  .mascot:hover img { animation: none; }
+  .mascot.spinning img { animation: none; }
+  .mascot.waving img { animation: none; }
+  .mascot-footer { animation: none; }
+  .btn:hover { transform: none; }
+  .feature-card:hover { transform: none; }
+  .vibe-photo:hover img { transform: none; }
+}
