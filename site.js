@@ -9,16 +9,43 @@ var VENUE_ID = 'tallboy';
 /* ── Mobile Nav Toggle ──────────────────────────────────── */
 
 function toggleNav() {
-  var links = document.querySelector('.nav-links');
-  if (links) links.classList.toggle('open');
+  var overlay = document.getElementById('mobile-nav-overlay');
+  if (!overlay) return;
+  var isOpen = overlay.style.display === 'flex';
+  overlay.style.display = isOpen ? 'none' : 'flex';
 }
 
 document.addEventListener('click', function(e) {
-  var links = document.querySelector('.nav-links');
-  if (links && links.classList.contains('open') && !e.target.closest('.nav')) {
-    links.classList.remove('open');
+  var overlay = document.getElementById('mobile-nav-overlay');
+  if (overlay && overlay.style.display === 'flex' && !e.target.closest('.nav') && !e.target.closest('#mobile-nav-overlay')) {
+    overlay.style.display = 'none';
   }
 });
+
+/* ── Create Mobile Nav Overlay on load ─────────────────── */
+(function() {
+  var navLinks = document.querySelector('.nav-links');
+  if (!navLinks) return;
+
+  var overlay = document.createElement('div');
+  overlay.id = 'mobile-nav-overlay';
+  overlay.style.cssText = 'display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:#f5f0e8;flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:9999;';
+
+  // Clone nav links into the overlay
+  var links = navLinks.querySelectorAll('a');
+  links.forEach(function(a) {
+    var clone = document.createElement('a');
+    clone.href = a.href;
+    clone.textContent = a.textContent;
+    clone.style.cssText = 'font-size:1.4rem;font-weight:600;color:#2a2a2e;text-decoration:none;text-transform:uppercase;letter-spacing:0.08em;font-family:Oswald,Impact,sans-serif;';
+    if (a.target) clone.target = a.target;
+    if (a.rel) clone.rel = a.rel;
+    clone.addEventListener('click', function() { overlay.style.display = 'none'; });
+    overlay.appendChild(clone);
+  });
+
+  document.body.appendChild(overlay);
+})();
 
 /* ── Active Nav Highlight ───────────────────────────────── */
 
