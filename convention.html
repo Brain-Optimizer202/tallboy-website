@@ -86,6 +86,63 @@
     </div>
   </section>
 
+  <!-- Contact Form (moved above content sections on all devices) -->
+  <section class="section section-dark" id="plan">
+    <div class="container">
+      <div class="form-grid">
+        <div class="form-info">
+          <h3>Plan Your Group Event</h3>
+          <p>Tell us about your group and we'll make it easy. No rental fee, no minimum spend, no complicated booking process. Just let us know when you're coming and how many people.</p>
+
+          <h3 style="margin-top: 32px;">Details</h3>
+          <p>1239 9th St NW, Washington DC 20001<br>Part of the Convention Center building, own entrance on 9th Street</p>
+          <p style="margin-top: 12px;">Mon–Thu: 4pm–2am<br>Friday: 4pm–3am<br>Saturday: 12pm–3am<br>Sunday: 12pm–2am</p>
+
+          <div style="margin-top: 32px; padding: 20px; background: var(--bg-card); border-radius: 8px;">
+            <p style="font-size: 0.9rem; color: var(--text-on-card-secondary);">Prefer to reach out directly?</p>
+            <p style="margin-top: 8px;"><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></p>
+            <p><a href="tel:2024654822">(202) 465-4822</a></p>
+          </div>
+        </div>
+
+        <div>
+          <form onsubmit="submitEventForm(event)" style="background: var(--bg-card); padding: 32px; border-radius: 12px; color: var(--text-on-card);">
+            <h3 style="font-family: var(--font-display); text-transform: uppercase; margin-bottom: 24px; color: var(--text-on-card);">Get in Touch</h3>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+            </div>
+            <div class="form-group">
+              <label for="event_type">What Are You Planning?</label>
+              <select id="event_type" name="event_type">
+                <option value="Post-Session Drinks">Post-Session Drinks</option>
+                <option value="Group Dinner">Group Dinner</option>
+                <option value="Exhibitor After-Party">Exhibitor After-Party</option>
+                <option value="Client Entertainment">Client Entertainment</option>
+                <option value="Watch Party">Watch Party</option>
+                <option value="Team Outing">Team Outing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us More</label>
+              <textarea id="message" name="message" placeholder="Which convention? Dates, group size, anything we should know..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Why TallBoy for Your Group -->
   <section class="section">
     <div class="container">
@@ -185,63 +242,6 @@
         <div>
           <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--blue);">3am</div>
           <div style="color: var(--text-secondary); font-size: 0.9rem;">Open Til (Fri/Sat)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Form -->
-  <section class="section section-dark" id="plan">
-    <div class="container">
-      <div class="form-grid">
-        <div class="form-info">
-          <h3>Plan Your Group Event</h3>
-          <p>Tell us about your group and we'll make it easy. No rental fee, no minimum spend, no complicated booking process. Just let us know when you're coming and how many people.</p>
-
-          <h3 style="margin-top: 32px;">Details</h3>
-          <p>1239 9th St NW, Washington DC 20001<br>Part of the Convention Center building, own entrance on 9th Street</p>
-          <p style="margin-top: 12px;">Mon–Thu: 4pm–2am<br>Friday: 4pm–3am<br>Saturday: 12pm–3am<br>Sunday: 12pm–2am</p>
-
-          <div style="margin-top: 32px; padding: 20px; background: var(--bg-card); border-radius: 8px;">
-            <p style="font-size: 0.9rem; color: var(--text-on-card-secondary);">Prefer to reach out directly?</p>
-            <p style="margin-top: 8px;"><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></p>
-            <p><a href="tel:2024654822">(202) 465-4822</a></p>
-          </div>
-        </div>
-
-        <div>
-          <form onsubmit="submitEventForm(event)" style="background: var(--bg-card); padding: 32px; border-radius: 12px; color: var(--text-on-card);">
-            <h3 style="font-family: var(--font-display); text-transform: uppercase; margin-bottom: 24px; color: var(--text-on-card);">Get in Touch</h3>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
-            </div>
-            <div class="form-group">
-              <label for="event_type">What Are You Planning?</label>
-              <select id="event_type" name="event_type">
-                <option value="Post-Session Drinks">Post-Session Drinks</option>
-                <option value="Group Dinner">Group Dinner</option>
-                <option value="Exhibitor After-Party">Exhibitor After-Party</option>
-                <option value="Client Entertainment">Client Entertainment</option>
-                <option value="Watch Party">Watch Party</option>
-                <option value="Team Outing">Team Outing</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell Us More</label>
-              <textarea id="message" name="message" placeholder="Which convention? Dates, group size, anything we should know..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry</button>
-          </form>
         </div>
       </div>
     </div>
