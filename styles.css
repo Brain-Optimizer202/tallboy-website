@@ -1037,9 +1037,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .open-now-badge.closed {
-  background: rgba(239, 68, 68, 0.15);
-  border-color: var(--red);
-  color: var(--red);
+  background: rgba(30, 30, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
   animation: none;
 }
 
@@ -1248,7 +1248,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute;
   bottom: 40px;
   right: -20px;
-  height: 140px;
+  height: 220px;
   animation: mascotPeek 1s ease-out 1.2s both;
   z-index: 10;
 }
