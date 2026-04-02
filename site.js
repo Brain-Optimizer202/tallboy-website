@@ -229,7 +229,7 @@ function submitEventForm(e) {
     btn.disabled = false;
     btn.textContent = 'Send Inquiry';
     form.reset();
-    showToast(data.message || 'Thanks! We\'ll be in touch soon.');
+    showToast('Form submitted! Be on the lookout for an email. We\'ll be in touch with you as soon as possible.');
   })
   .catch(function(err) {
     console.error('Form submission error:', err);
@@ -297,7 +297,7 @@ function showToast(msg) {
   setTimeout(function() {
     el.classList.remove('show');
     setTimeout(function() { el.remove(); }, 300);
-  }, 3000);
+  }, 5000);
 }
 
 /* ── Utilities ──────────────────────────────────────────── */

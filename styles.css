@@ -857,16 +857,20 @@ img { max-width: 100%; height: auto; display: block; }
 
 .toast-notification {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--blue);
-  border-radius: 8px;
-  padding: 16px 24px;
-  font-size: 0.85rem;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%) scale(0.95);
+  background: rgba(212, 58, 47, 0.95);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 24px 36px;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
   z-index: 2000;
   opacity: 0;
-  transform: translateY(20px);
   transition: all 0.3s;
 }
 
@@ -875,7 +879,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .toast-notification.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 50%) scale(1);
 }
 
 /* ── Page Header (for inner pages) ──────────────────────── */
