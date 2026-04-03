@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closing Report - TallBoy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bg-primary: #1a1a1e;
+      --bg-secondary: #222226;
+      --bg-card: #f5f0e8;
+      --text-primary: #f5f5f0;
+      --text-on-card: #2a2a2e;
+      --red: #d43a2f;
+      --blue: #3a7bd5;
+      --border-radius: 8px;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Password Gate */
+    .password-gate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(26, 26, 30, 0.95);
+      z-index: 1000;
+    }
+
+    .password-gate.hidden {
+      display: none;
+    }
+
+    .password-card {
+      background-color: var(--bg-card);
+      color: var(--text-on-card);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .password-card h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      color: var(--red);
+    }
+
+    .password-card p {
+      margin: 0 0 30px 0;
+      font-size: 0.95rem;
+      color: var(--text-on-card);
+    }
+
+    .password-input-group {
+      margin-bottom: 20px;
+    }
+
+    .password-input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 2px solid var(--text-on-card);
+      border-radius: var(--border-radius);
+      background-color: white;
+      color: var(--text-on-card);
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+
+    .password-input-group input:focus {
+      outline: none;
+      border-color: var(--blue);
+    }
+
+    .password-submit {
+      width: 100%;
+      padding: 12px 20px;
+      background-color: var(--red);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .password-submit:hover {
+      background-color: #b83229;
+    }
+
+    .password-error {
+      color: var(--red);
+      font-size: 0.9rem;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .password-error.show {
+      display: block;
+    }
+
+    /* Form Container */
+    .form-container {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .form-card {
+      background-color: var(--bg-card);
+      color: var(--text-on-card);
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-card h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      color: var(--red);
+    }
+
+    .form-card .subtitle {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: var(--text-on-card);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: var(--border-radius);
+      background-color: white;
+      color: var(--text-on-card);
+      font-family: 'Inter', sans-serif;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card {
+        padding: 24px;
+      }
+
+      .password-card {
+        padding: 30px 20px;
+      }
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px 20px;
+      background-color: var(--red);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #b83229;
+    }
+
+    .submit-btn:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+
+    /* Toast Notifications */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 16px 24px;
+      border-radius: var(--border-radius);
+      display: none;
+      z-index: 2000;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    .toast.show {
+      display: block;
+    }
+
+    .toast.success {
+      background-color: #4caf50;
+    }
+
+    .toast.error {
+      background-color: var(--red);
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Error/Success Display */
+    .error-block {
+      background-color: #ffe6e6;
+      border: 2px solid var(--red);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .error-block.show {
+      display: block;
+    }
+
+    .error-block h3 {
+      color: var(--red);
+      margin-top: 0;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .error-block .copy-btn {
+      background-color: var(--red);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .error-block .copy-btn:hover {
+      background-color: #b83229;
+    }
+
+    .error-data {
+      background-color: white;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+      font-family: monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+    }
+
+    /* Success State */
+    .success-message {
+      background-color: #e8f5e9;
+      border: 2px solid #4caf50;
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    .success-message h2 {
+      color: #4caf50;
+      font-family: 'Oswald', sans-serif;
+      margin: 0;
+    }
+
+    .success-message p {
+      margin: 10px 0 0 0;
+      color: var(--text-on-card);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html"><img src="assets/images/tallboy-logo.png" alt="TallBoy" class="nav-logo" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="private-events.html">Private Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://order.toasttab.com/online/tall-boy" target="_blank" rel="noopener">Order Online</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Password Gate -->
+  <div class="password-gate" id="passwordGate">
+    <div class="password-card">
+      <h1>Access Code</h1>
+      <p>Enter the access code to view closing report</p>
+      <div class="password-input-group">
+        <input type="password" id="passwordInput" placeholder="Enter code" onkeypress="handlePasswordKeypress(event)">
+      </div>
+      <button class="password-submit" onclick="checkPassword()">Submit</button>
+      <div class="password-error" id="passwordError">Incorrect code. Please try again.</div>
+    </div>
+  </div>
+
+  <main>
+    <div class="form-container">
+      <div class="form-card">
+        <h1>Closing Report</h1>
+        <p class="subtitle">End of shift report for TallBoy</p>
+
+        <form id="closingReportForm">
+          <!-- Basic Info Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="First and Last" required>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+          </div>
+
+          <!-- Sales Total -->
+          <div class="form-group">
+            <label for="salesTotal">Sales Total ($)</label>
+            <input type="number" id="salesTotal" name="salesTotal" placeholder="0.00" step="0.01" min="0" required>
+          </div>
+
+          <!-- Did anything break? -->
+          <div class="form-group">
+            <label>Did anything break?</label>
+            <div class="checkbox-group">
+              <input type="radio" id="breakYes" name="didBreak" value="yes" onchange="toggleDetail('breakDetail', true)">
+              <label for="breakYes">Yes</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="radio" id="breakNo" name="didBreak" value="no" checked onchange="toggleDetail('breakDetail', false)">
+              <label for="breakNo">No</label>
+            </div>
+            <textarea id="breakDetail" name="breakDetail" placeholder="What broke? Any details..." style="display:none; margin-top: 10px;"></textarea>
+          </div>
+
+          <!-- Did we run out of anything? -->
+          <div class="form-group">
+            <label>Did we run out of anything?</label>
+            <div class="checkbox-group">
+              <input type="radio" id="stockYes" name="ranOut" value="yes" onchange="toggleDetail('stockDetail', true)">
+              <label for="stockYes">Yes</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="radio" id="stockNo" name="ranOut" value="no" checked onchange="toggleDetail('stockDetail', false)">
+              <label for="stockNo">No</label>
+            </div>
+            <textarea id="stockDetail" name="stockDetail" placeholder="What did we run out of?" style="display:none; margin-top: 10px;"></textarea>
+          </div>
+
+          <!-- Problems / Neighborhood Issues -->
+          <div class="form-group">
+            <label for="problems">Problems or Neighborhood Issues</label>
+            <textarea id="problems" name="problems" placeholder="Any issues with customers, neighborhood, etc."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="otherNotes">Anything Else to Report</label>
+            <textarea id="otherNotes" name="otherNotes" placeholder="Additional notes or observations"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="businessIdeas">Ideas to Generate Business or Bring in Regulars</label>
+            <textarea id="businessIdeas" name="businessIdeas" placeholder="What would bring people in? Suggestions for events, promotions, etc."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Report</button>
+        </form>
+
+        <!-- Error Display for Failed Submission -->
+        <div class="error-block" id="errorBlock">
+          <h3>Unable to Submit Online</h3>
+          <p>If the form won't submit, copy this data and text it to Elliot:</p>
+          <button class="copy-btn" onclick="copyErrorData()">Copy Data</button>
+          <div class="error-data" id="errorData"></div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+          <h2>Report Submitted!</h2>
+          <p>Your closing report has been received. Thank you!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/tallboy-logo.png" alt="TallBoy" style="height: 40px;" onerror="this.outerHTML='<span style=&quot;font-family:Oswald;font-size:1.5rem;font-weight:700;color:#d43a2f;&quot;>TALLBOY</span>'">
+          <p>Shaw's neighborhood bar since 2019. Around the corner from the Convention Center.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/tallboybar/" target="_blank" rel="noopener">IG</a>
+            <a href="https://www.facebook.com/tallboybar/" target="_blank" rel="noopener">FB</a>
+            <a href="https://www.tiktok.com/@tallboybar" target="_blank" rel="noopener">TT</a>
+          </div>
+        </div>
+        <div><h4>Hours</h4><ul class="footer-links"><li>Mon-Thu: 4pm-2am</li><li>Friday: 4pm-3am</li><li>Saturday: 12pm-3am</li><li>Sunday: 12pm-2am</li></ul></div>
+        <div><h4>Visit</h4><ul class="footer-links"><li><a href="https://maps.google.com/?q=1239+9th+St+NW+Washington+DC" target="_blank" rel="noopener">1239 9th St NW, Shaw DC</a></li><li><a href="tel:2024654822">(202) 465-4822</a></li><li><a href="mailto:Contact@TallBoyBar.com">Contact@TallBoyBar.com</a></li></ul></div>
+        <div><h4>Quick Links</h4><ul class="footer-links"><li><a href="menu.html">Menu</a></li><li><a href="events.html">Events</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="https://order.toasttab.com/online/tall-boy" target="_blank" rel="noopener">Order Online</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 TallBoy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="site.js"></script>
+  <script>
+    // API endpoint
+    const TALLBOY_API = 'https://tallboy-backend-production.up.railway.app';
+    const CORRECT_PASSWORD = '1239';
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set today's date as default
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('date').value = today;
+
+      // Check if user already authenticated in this session
+      if (sessionStorage.getItem('closingReportAuthenticated') === 'true') {
+        showForm();
+      }
+    });
+
+    // Password Gate Logic
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      const errorEl = document.getElementById('passwordError');
+
+      if (password === CORRECT_PASSWORD) {
+        sessionStorage.setItem('closingReportAuthenticated', 'true');
+        showForm();
+        errorEl.classList.remove('show');
+      } else {
+        errorEl.classList.add('show');
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInput').focus();
+      }
+    }
+
+    function handlePasswordKeypress(event) {
+      if (event.key === 'Enter') {
+        checkPassword();
+      }
+    }
+
+    function showForm() {
+      document.getElementById('passwordGate').classList.add('hidden');
+    }
+
+    // Toggle detail textarea when Yes is selected
+    function toggleDetail(id, show) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.style.display = show ? 'block' : 'none';
+        if (!show) el.value = '';
+      }
+    }
+
+    // Form Submission
+    document.getElementById('closingReportForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = {
+        venue_id: 'tallboy',
+        bartender_name: document.getElementById('name').value,
+        shift_date: document.getElementById('date').value,
+        sales_total: parseFloat(document.getElementById('salesTotal').value) || null,
+        anything_broken: document.getElementById('breakYes').checked ? (document.getElementById('breakDetail').value || 'Yes (no details)') : null,
+        ran_out_of: document.getElementById('stockYes').checked ? (document.getElementById('stockDetail').value || 'Yes (no details)') : null,
+        problems_or_issues: document.getElementById('problems').value || null,
+        other_notes: document.getElementById('otherNotes').value || null,
+        business_ideas: document.getElementById('businessIdeas').value || null
+      };
+
+      const submitBtn = document.querySelector('.submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const response = await fetch(TALLBOY_API + '/api/closing-report', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+          // Success
+          document.getElementById('closingReportForm').style.display = 'none';
+          document.getElementById('successMessage').classList.add('show');
+          showToast('Report submitted successfully!', 'success');
+        } else {
+          throw new Error('Server returned ' + response.status);
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        // Show error block with copyable data
+        showErrorBlock(formData);
+        showToast('Could not submit online. Please copy the data below.', 'error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Report';
+      }
+    });
+
+    function showErrorBlock(formData) {
+      const errorBlock = document.getElementById('errorBlock');
+      const errorData = document.getElementById('errorData');
+
+      const dataText = `Closing Report - ${formData.shift_date}
+Bartender: ${formData.bartender_name}
+Sales: $${formData.sales_total || 'N/A'}
+Anything Broken: ${formData.anything_broken || 'No'}
+Ran Out Of: ${formData.ran_out_of || 'No'}
+
+Problems/Issues: ${formData.problems_or_issues || '(none)'}
+
+Other Notes: ${formData.other_notes || '(none)'}
+
+Business Ideas: ${formData.business_ideas || '(none)'}`;
+
+      errorData.textContent = dataText;
+      errorBlock.classList.add('show');
+    }
+
+    function copyErrorData() {
+      const errorData = document.getElementById('errorData').textContent;
+      navigator.clipboard.writeText(errorData).then(() => {
+        showToast('Data copied to clipboard!', 'success');
+      }).catch(() => {
+        showToast('Could not copy. Please select and copy manually.', 'error');
+      });
+    }
+
+    function showToast(message, type = 'info') {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = 'toast show ' + type;
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
