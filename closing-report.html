@@ -160,14 +160,16 @@
       font-size: 1.8rem;
       font-weight: 700;
       text-transform: uppercase;
-      margin: 0 0 10px 0;
+      margin: 8px 0 10px 0;
       color: var(--red);
+      text-align: center;
     }
 
     .form-card .subtitle {
       font-size: 0.9rem;
       color: #666;
       margin-bottom: 30px;
+      text-align: center;
     }
 
     .form-group {
@@ -225,27 +227,6 @@
       .password-card {
         padding: 30px 20px;
       }
-    }
-
-    .checkbox-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-
-    .checkbox-group input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-    }
-
-    .checkbox-group label {
-      margin: 0;
-      font-weight: 400;
-      cursor: pointer;
     }
 
     .submit-btn {
@@ -425,11 +406,11 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="First and Last" required>
+              <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
               <label for="date">Date</label>
-              <input type="date" id="date" name="date" required>
+              <input type="date" id="date" name="date" required style="max-width: 100%; box-sizing: border-box;">
             </div>
           </div>
 
@@ -441,30 +422,14 @@
 
           <!-- Did anything break? -->
           <div class="form-group">
-            <label>Did anything break?</label>
-            <div class="checkbox-group">
-              <input type="radio" id="breakYes" name="didBreak" value="yes" onchange="toggleDetail('breakDetail', true)">
-              <label for="breakYes">Yes</label>
-            </div>
-            <div class="checkbox-group">
-              <input type="radio" id="breakNo" name="didBreak" value="no" checked onchange="toggleDetail('breakDetail', false)">
-              <label for="breakNo">No</label>
-            </div>
-            <textarea id="breakDetail" name="breakDetail" placeholder="What broke? Any details..." style="display:none; margin-top: 10px;"></textarea>
+            <label for="anythingBroken">Did anything break?</label>
+            <textarea id="anythingBroken" name="anythingBroken" placeholder="The freezer isn't working, ice machine down, etc."></textarea>
           </div>
 
           <!-- Did we run out of anything? -->
           <div class="form-group">
-            <label>Did we run out of anything?</label>
-            <div class="checkbox-group">
-              <input type="radio" id="stockYes" name="ranOut" value="yes" onchange="toggleDetail('stockDetail', true)">
-              <label for="stockYes">Yes</label>
-            </div>
-            <div class="checkbox-group">
-              <input type="radio" id="stockNo" name="ranOut" value="no" checked onchange="toggleDetail('stockDetail', false)">
-              <label for="stockNo">No</label>
-            </div>
-            <textarea id="stockDetail" name="stockDetail" placeholder="What did we run out of?" style="display:none; margin-top: 10px;"></textarea>
+            <label for="ranOutOf">Did we run out of anything?</label>
+            <textarea id="ranOutOf" name="ranOutOf" placeholder="Jameson, Klontarf, limes, etc."></textarea>
           </div>
 
           <!-- Problems / Neighborhood Issues -->
@@ -568,15 +533,6 @@
       document.getElementById('passwordGate').classList.add('hidden');
     }
 
-    // Toggle detail textarea when Yes is selected
-    function toggleDetail(id, show) {
-      var el = document.getElementById(id);
-      if (el) {
-        el.style.display = show ? 'block' : 'none';
-        if (!show) el.value = '';
-      }
-    }
-
     // Form Submission
     document.getElementById('closingReportForm').addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -586,8 +542,8 @@
         bartender_name: document.getElementById('name').value,
         shift_date: document.getElementById('date').value,
         sales_total: parseFloat(document.getElementById('salesTotal').value) || null,
-        anything_broken: document.getElementById('breakYes').checked ? (document.getElementById('breakDetail').value || 'Yes (no details)') : null,
-        ran_out_of: document.getElementById('stockYes').checked ? (document.getElementById('stockDetail').value || 'Yes (no details)') : null,
+        anything_broken: document.getElementById('anythingBroken').value || null,
+        ran_out_of: document.getElementById('ranOutOf').value || null,
         problems_or_issues: document.getElementById('problems').value || null,
         other_notes: document.getElementById('otherNotes').value || null,
         business_ideas: document.getElementById('businessIdeas').value || null
@@ -631,8 +587,8 @@
       const dataText = `Closing Report - ${formData.shift_date}
 Bartender: ${formData.bartender_name}
 Sales: $${formData.sales_total || 'N/A'}
-Anything Broken: ${formData.anything_broken || 'No'}
-Ran Out Of: ${formData.ran_out_of || 'No'}
+Anything Broken: ${formData.anything_broken || 'Nothing'}
+Ran Out Of: ${formData.ran_out_of || 'Nothing'}
 
 Problems/Issues: ${formData.problems_or_issues || '(none)'}
 
