@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════════ */
 
 (function() {
-  const BEER_LIST_URL = 'beer-list.json';
+  const BEER_LIST_URL = 'https://tallboy-beer-sync.peter-50f.workers.dev/beer-list.json';
 
   const CATEGORY_COLORS = {
     'LIGHT + BRIGHT': '#d4a437',
